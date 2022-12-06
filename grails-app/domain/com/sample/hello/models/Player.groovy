@@ -1,0 +1,21 @@
+package com.sample.hello.models
+
+class Player {
+
+    static belongsTo = [team: Team]
+
+    String name
+    Integer age
+    String position
+
+    static constraints = {
+        name size: 5..40, blank: false
+        age min: 16
+        position size: 5..40, blank: false
+    }
+
+    @Override
+    String toString() {
+        return name
+    }
+}
